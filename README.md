@@ -1,7 +1,6 @@
 # NYC Taxi Trip Duration Prediction 🗽🚕  
 > A regression-based machine learning project using real-world taxi ride data from New York City.
 
-![Taxi Image](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/NYC_Taxi_YellowCab.jpg/640px-NYC_Taxi_YellowCab.jpg)
 
 ---
 
