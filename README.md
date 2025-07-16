@@ -1,111 +1,104 @@
-# NYC Taxi Trip Duration Prediction 🗽🚕  
-> A regression-based machine learning project using real-world taxi ride data from New York City.
-
-
----
-
-## 📌 Project Overview
-
-This project focuses on building machine learning models to **predict the duration of NYC taxi trips** based on historical ride data. By applying data cleaning, exploratory data analysis (EDA), and regression algorithms, we aim to understand what factors most influence trip time and build a model that can estimate it accurately.
+# 🗽 NYC Taxi Trip Duration Prediction 🚖  
+A machine learning project to predict the trip duration of NYC taxi rides using real-world geospatial and time-based data.
 
 ---
 
-## 🧠 Problem Statement
+## 📁 Overview
 
-> "Can we accurately predict NYC taxi trip duration using ride-specific features like pickup time, passenger count, and vendor ID?"
+This project uses a dataset of over **1.4 million taxi rides in NYC** to build and evaluate machine learning models for predicting **trip duration**.
 
-With millions of daily rides, efficient trip time estimation is critical for customer satisfaction, fleet optimization, and route planning. This project aims to build a regression model that minimizes error and supports intelligent transportation decisions.
-
----
-
-## 📂 Dataset
-
-- **Source**: NYC Taxi & Limousine Commission (TLC)  
-- **Format**: CSV  
-- **Size**: ~50,000 records  
-- **Key Features**:
-  - `pickup_datetime`, `dropoff_datetime`
-  - `passenger_count`, `vendor_id`
-  - `trip_duration` (Target Variable)
+It covers the **end-to-end ML pipeline**:
+- Data cleaning & preprocessing
+- Feature engineering (distance, time, rush hour flags)
+- Outlier handling
+- Model training & evaluation
+- Feature importance & explainability
 
 ---
 
-## 🛠️ Tools & Technologies
+## 🧠 Objective
 
-- Python (Pandas, NumPy, Matplotlib, Seaborn, Plotly)
+> Accurately predict how long a taxi ride will take using factors like pickup time, passenger count, pickup/dropoff locations, and more.
+
+This kind of prediction has real-world use cases in:
+- Dynamic pricing
+- Route planning
+- ETA prediction for ride-sharing apps
+
+---
+
+## 📊 Dataset
+
+- ✅ **Source**: [Kaggle NYC Taxi Trip Duration](https://www.kaggle.com/c/nyc-taxi-trip-duration)
+- 💡 **Size**: 1.4M+ rows, 19+ features
+- 🔍 **Target**: `trip_duration` 
+
+---
+
+## 🛠️ Technologies Used
+
+- Python
+- Pandas, NumPy
+- Matplotlib, Seaborn
 - Scikit-learn
+- Lasso Regression
+- Linear Regression
 - XGBoost
-- GridSearchCV
-- Google Colab
 
 ---
 
-## 📊 Exploratory Data Analysis (EDA)
+## 🚀 Models Trained
 
-The EDA was structured using the **UBM rule**:
-- **U**nivariate Analysis
-- **B**ivariate Analysis
-- **M**ultivariate Analysis
+| Model              | MAE     | RMSE    | R² Score |
+|-------------------|---------|---------|----------|
+| Lasso Regression  | 275.40  | 400.01  | 0.6247   |
+| Linear Regression | 275.29  | 399.94  | 0.6248   |
+| **XGBoost**        | **187.15** | **287.71** | **0.8058** |
 
-15+ insightful charts were created to discover:
-- Rush hour patterns
-- Impact of passenger count
-- Weekend vs weekday trends
-- Vendor-specific behaviors
+🎯 **Final Model Chosen**: `XGBoost Regressor`  
+Due to its high accuracy, ability to handle non-linear data, and better generalization.
 
 ---
 
-## 🤖 ML Models Used
+## 🔍 Feature Importance (XGBoost)
 
-| Model             | R² Score | RMSE (in seconds) |
-|------------------|----------|------------------|
-| Linear Regression| 0.7923   | ~297.5           |
-| Lasso Regression | 0.6154   | ~404.9           |
-| XGBoost Regressor| **0.7923** | **~297.5**       |
+Top features impacting trip duration:
+- `trip_distance_km`
+- `is_weekend`
+- `pickup_hour`
+- `is_rush_hour`
 
-✅ **XGBoost performed the best**, showing excellent generalization after hyperparameter tuning.
+Used XGBoost’s `.plot_importance()` method to visualize gain-based feature importance.
 
 ---
 
 ## 📈 Evaluation Metrics
 
-- **MAE** (Mean Absolute Error)
-- **MSE** (Mean Squared Error)
-- **RMSE** (Root Mean Squared Error)
-- **R² Score**
-- **Adjusted R²**
+- **MAE (Mean Absolute Error)**
+- **MSE (Mean Squared Error)**
+- **RMSE (Root Mean Squared Error)**  
+- **R² and Adjusted R²**  
+- **Cross-Validation**  
+- **Hyperparameter Tuning with GridSearchCV**
 
 ---
 
-## ✅ Conclusion
+## 📌 Key Learnings
 
-This project demonstrates how historical ride data can be turned into actionable intelligence using machine learning. The XGBoost model achieved strong performance, and with further enhancements (e.g., incorporating weather or traffic data), the model could become even more impactful for real-time systems.
-
----
-
-## 🚀 Future Improvements
-
-- Add external data like traffic, weather, and geolocation routes
-- Use deep learning models like LSTM for time-series prediction
-- Deploy the model as an API using Flask or FastAPI
+- Hands-on experience with **real-world regression problems**
+- Built strong data preprocessing & feature engineering skills
+- Learned to evaluate and explain models beyond just accuracy
+- Understood how **feature importance** helps in interpretation
 
 ---
 
-## 📌 Project Status
+## ✅ Next Steps (Optional Ideas)
 
-✅ Completed and functional  
-📈 Ready for portfolio showcase  
-🧠 Open to future enhancements
-
----
-
-## 👩‍💻 Author
-
-**Srishti Singhal**  
-_Data Science Enthusiast | B.Tech CSE_  
-📧 [srishtisinghal6125@gmail.com]  
-🔗 [(https://www.linkedin.com/in/srishti-singhal-601ab1277/)]
+- Deploy with **Streamlit or Flask**
+- Use SHAP for local/global interpretability
+- Build a real-time prediction dashboard
 
 ---
 
-## ⭐ Star this repo if you found it helpful!  
+## 📂 Project Structure
+
