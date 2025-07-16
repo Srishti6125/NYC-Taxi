@@ -29,7 +29,7 @@ This kind of prediction has real-world use cases in:
 
 ## 📊 Dataset
 
-- ✅ **Source**: [NYC Taxi Trip Duration]((https://drive.google.com/drive/folders/1ehYgf0ziDvse5WwGFz_-ECamMQHtBMVT))
+- ✅ **Source**: [NYC Taxi Trip Duration]([https://drive.google.com/drive/folders/1ehYgf0ziDvse5WwGFz_-ECamMQHtBMVT])
 - 💡 **Size**: 1.4M+ rows, 19+ features
 - 🔍 **Target**: `trip_duration` 
 
